@@ -1,0 +1,2 @@
+mkdir -p %{buildroot}/usr/share/cmake/
+mv %{buildroot}/usr/lib64/ias-audio-common/ %{buildroot}/usr/share/cmake/
