@@ -1,5 +1,4 @@
-4.1.0
+4.2.0
 pkgconfig(alsa)
 pkgconfig(automotive-dlt)
 pkgconfig(sndfile)
-zlib-dev
