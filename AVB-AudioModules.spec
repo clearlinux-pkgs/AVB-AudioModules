@@ -4,7 +4,7 @@
 #
 Name     : AVB-AudioModules
 Version  : 4.2.0
-Release  : 5
+Release  : 6
 URL      : https://github.com/intel/AVB-AudioModules/archive/v4.2.0/AVB-AudioModules-4.2.0.tar.gz
 Source0  : https://github.com/intel/AVB-AudioModules/archive/v4.2.0/AVB-AudioModules-4.2.0.tar.gz
 Summary  : Common audio modules
@@ -75,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579637346
+export SOURCE_DATE_EPOCH=1592429458
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -83,15 +83,15 @@ export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake .. -DCMAKE_INSTALL_LIBDIR=%{_lib}
 make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1579637346
+export SOURCE_DATE_EPOCH=1592429458
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/AVB-AudioModules
 cp %{_builddir}/AVB-AudioModules-4.2.0/LICENSE.txt %{buildroot}/usr/share/package-licenses/AVB-AudioModules/bec8feed5d6152624b747f316dcbcae24a3b9a94
